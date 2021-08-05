@@ -9,6 +9,18 @@ let agePass = parseInt ( prompt("Quanti anni hai?") );
 
 var priceKm = numKm * oneKmPrice ; 
 
+if (agePass < 18){
+    var finalSales = priceKm * under18Sales ;
+    var finalPrice = priceKm - finalSales;
+}
+else if (agePass >= 65) {
+    var finalSales = priceKm * over65Sales ;
+    var finalPrice = priceKm - finalSales;
+}
 
+else {
+    var finalPrice = priceKm;
+}
 
+document.getElementById("showed-price").innerHTML = finalPrice.toFixed(2);
 
